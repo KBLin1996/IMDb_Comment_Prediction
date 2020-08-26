@@ -7,9 +7,12 @@ def comment():
     filepath = "D:/pythonWork/IMDb/aclImdb_v1.tar.gz"
 
     if not os.path.isfile(filepath):
+        os.mkdir("D:/pythonWork")
+        os.mkdir("D:/pythonWork/IMDb")
+        print("Successfully Create pythonWork/IMDb in D:/")
         result = urllib.request.urlretrieve(url, filepath) # if file not exist, urllib.request.urlretrieve(A,B)
                                                            # will download A to B
-        print('downloaded:', result)
+        print("downloaded:", result)
 
     if not os.path.exists("D:/pythonWork/IMDb/acImdb"):
         tfile = tarfile.open("D:/pythonWork/IMDb/aclImdb_v1.tar.gz", 'r:gz')
